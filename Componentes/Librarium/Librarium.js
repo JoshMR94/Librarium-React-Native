@@ -17,23 +17,22 @@ import {
 } from 'react-navigation';
 
 import MisLibros from './MisLibros/MisLibros';
+import Cabecera from './Cabecera/Cabecera';
 
 export default class Librarium extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.onPressButton = this.onPressButton.bind(this);
+
+    /* https://reactnavigation.org/docs/intro/quick-start */
   }
 
   render() {   
     return (   
       <View>
-        <View>
-          <Header
-            centerComponent={{ text: 'LIBRARIUM', style: { color: '#000' } }} 
-          />
-        </View>
+        <Cabecera/>
         <View style={styles.botones}>
           <View style={styles.botonSup}>
             <Button 
@@ -72,14 +71,15 @@ export default class Librarium extends Component {
   }
 
   onPressButton() {
-    const { navigate } = this.props.navigation;
+    //const { navigate } = this.props.navigation;
     
     var options = {
-      title: strings.app_name,
-      content: strings.create_message,
-      positiveText: strings.OK,
-      onPositive: () => navigate("MisLibros")
+      //title: strings.app_name,
+      //content: strings.create_message,
+      //positiveText: strings.OK,
+      onPositive: () => this.props.navigation.navigate("MisLibros")
     };
+    
     var dialog = new DialogAndroid();
     dialog.set(options);
     dialog.show();
