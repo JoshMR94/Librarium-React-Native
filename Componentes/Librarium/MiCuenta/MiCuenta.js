@@ -14,15 +14,16 @@ import {
 
 
 
-export default class MisLibros extends Component {
+export default class MiCuenta extends Component {
 
   static navigationOptions = {
-    title: 'MisLibros',
+    title: 'MiCuenta'
   };
 
   render() {
     return (
       <ScrollView>
+        {/*
         <View style={styles.libro1}>
           <Image
             source={require('../../../img/hp.png')}
@@ -35,6 +36,7 @@ export default class MisLibros extends Component {
           />
           <Text>Sherlock Holmes</Text>
         </View>
+        */}
       </ScrollView>
     );
   }

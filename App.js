@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   Platform,
@@ -11,8 +5,14 @@ import {
   Text,
   View
 } from 'react-native';
+import {
+  StackNavigator,
+} from 'react-navigation';
 
 import Librarium from './Componentes/Librarium/Librarium';
+import MisLibros from './Componentes/Librarium/MisLibros/MisLibros';
+import MisAutores from './Componentes/Librarium/MisAutores/MisAutores';
+import MiCuenta from './Componentes/Librarium/MiCuenta/MiCuenta';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -21,13 +21,24 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-export default class App extends Component {
-  render() {
-    return (
-      <Librarium />
-    );
-  }
-}
+// export default class App extends Component {
+//   render() {
+//     return (
+//       <Librarium />
+//     );
+//   }
+// }
+
+const App = StackNavigator({
+  Librarium: {screen: Librarium},
+  MisLibros: {screen: MisLibros},
+  MisAutores: {screen: MisAutores},
+  MiCuenta: {screen: MiCuenta},
+}, {
+  initialRouteName: 'Librarium'
+});
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {
