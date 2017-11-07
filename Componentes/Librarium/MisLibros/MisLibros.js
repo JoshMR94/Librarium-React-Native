@@ -17,7 +17,7 @@ import {
 export default class MisLibros extends Component {
 
   static navigationOptions = {
-    title: 'MisLibros',
+    title: 'Mis Libros',
   };
 
   render() {

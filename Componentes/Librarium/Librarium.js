@@ -19,6 +19,7 @@ import {
 import MisLibros from './MisLibros/MisLibros';
 import MisAutores from  './MisAutores/MisAutores';
 import MiCuenta from './MiCuenta/MiCuenta';
+import MisOpciones from './MisOpciones/MisOpciones';
 import Cabecera from './Cabecera/Cabecera';
 
 export default class Librarium extends Component {
@@ -73,17 +74,20 @@ export default class Librarium extends Component {
               raised
               large
               icon={{name: 'settings'}}
-              title='Mis Opciones' />
+              title='Mis Opciones'
+              onPress={() => navigate('MisOpciones')} 
+               />
           </View>
         </View>
       </View>
     );
   }
 
-
+  /*
   onPressButton(){
     navigate('Profile', { name: 'Jane' })
   }
+  */
 
   /*
   onPressButton() {

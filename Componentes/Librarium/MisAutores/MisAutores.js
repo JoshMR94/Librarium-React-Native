@@ -17,26 +17,24 @@ import {
 export default class MisAutores extends Component {
 
   static navigationOptions = {
-    title: 'MisAutores',
+    title: 'Mis Autores',
   };
 
   render() {
     return (
-      <ScrollView>
-        {/*
+      <ScrollView>      
         <View style={styles.libro1}>
           <Image
-            source={require('../../../img/hp.png')}
+            source={require('../../../img/ArthurConanDoyle.png')}
           />
-          <Text>Harry Potter y La Piedra Filosofal</Text>
+          <Text>Arthur Conan Doyle</Text>
         </View>
         <View style={styles.libro2}>
           <Image
-            source={require('../../../img/SherlockHolmes.png')}
+            source={require('../../../img/JKRowling.png')}
           />
-          <Text>Sherlock Holmes</Text>
+          <Text>J.K. Rowling</Text>
         </View>
-        */}
       </ScrollView>
     );
   }

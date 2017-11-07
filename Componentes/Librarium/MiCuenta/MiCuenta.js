@@ -4,48 +4,50 @@ import {
   StyleSheet,
   View,
   ScrollView,
-  Image
+  Image,
+  TextInput
 } from 'react-native';
 import { 
   Text, 
   Header, 
-  Button 
+  Button,
+  CheckBox 
 } from 'react-native-elements';
 
 
 
 export default class MiCuenta extends Component {
 
+  constructor(props){
+    super(props);
+    this.state = { textUser: '', textPassword: '' };
+
+    //this.pressOpcion1 = this.pressOpcion1.bind(this);
+
+  }
+
   static navigationOptions = {
-    title: 'MiCuenta'
+    title: 'Mi Cuenta'
   };
 
   render() {
     return (
-      <ScrollView>
-        {/*
-        <View style={styles.libro1}>
-          <Image
-            source={require('../../../img/hp.png')}
-          />
-          <Text>Harry Potter y La Piedra Filosofal</Text>
-        </View>
-        <View style={styles.libro2}>
-          <Image
-            source={require('../../../img/SherlockHolmes.png')}
-          />
-          <Text>Sherlock Holmes</Text>
-        </View>
-        */}
-      </ScrollView>
+      <View>
+        <Text h6>Usuario:</Text>
+        <TextInput 
+          onChangeText={(textUser) => this.setState({textUser})}
+          value={this.state.textUser}
+        />
+        <Text h6>Contraseña:</Text>
+        <TextInput 
+          onChangeText={(textPassword) => this.setState({textPassword})}
+          value={this.state.textPassword}
+        />
+      </View>
     );
   }
 
 }
 
 const styles = StyleSheet.create({
-  libros: {
-    flex: 2,
-    alignItems: 'center'
-  }
 })

@@ -13,6 +13,7 @@ import Librarium from './Componentes/Librarium/Librarium';
 import MisLibros from './Componentes/Librarium/MisLibros/MisLibros';
 import MisAutores from './Componentes/Librarium/MisAutores/MisAutores';
 import MiCuenta from './Componentes/Librarium/MiCuenta/MiCuenta';
+import MisOpciones from './Componentes/Librarium/MisOpciones/MisOpciones';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -34,6 +35,7 @@ const App = StackNavigator({
   MisLibros: {screen: MisLibros},
   MisAutores: {screen: MisAutores},
   MiCuenta: {screen: MiCuenta},
+  MisOpciones: {screen: MisOpciones}
 }, {
   initialRouteName: 'Librarium'
 });
