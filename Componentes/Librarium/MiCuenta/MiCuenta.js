@@ -22,7 +22,7 @@ export default class MiCuenta extends Component {
     super(props);
     this.state = { textUser: '', textPassword: '' };
 
-    //this.pressOpcion1 = this.pressOpcion1.bind(this);
+    this.iniciarSesion = this.iniciarSesion.bind(this);
 
   }
 
@@ -39,12 +39,24 @@ export default class MiCuenta extends Component {
           value={this.state.textUser}
         />
         <Text h6>Contraseña:</Text>
-        <TextInput 
+        <TextInput ty
           onChangeText={(textPassword) => this.setState({textPassword})}
           value={this.state.textPassword}
         />
+        <Button
+          title='Iniciar Sesión' 
+          onPress={() => this.iniciarSesion()}  
+        />
       </View>
     );
+  }
+
+  iniciarSesion() {
+    if(this.state.textUser == '' || this.state.textPassword == ''){
+      alert("Debe rellenar ambos campos.");
+    } else {
+      alert("Sesion iniciada correctamente");
+    }
   }
 
 }
